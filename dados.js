@@ -31,7 +31,7 @@ const dados = {
         ,
         {
             id: 5,
-            imagem: "./img/img_vereador.png",
+            imagem: "img_vereador.png",
             "tag": "1 de outubro",
             "nome": "Hoje celebramos o Dia do Vereador(a)!",
             "descricao": "É uma data para valorizar o compromisso diário com o diálogo, a transparência e a construção de uma cidade melhor para todos. Parabéns a todos os vereadores e vereadoras!"
