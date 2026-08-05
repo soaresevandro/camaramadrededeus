@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Câmara Madre de Deus</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="list">
+            <div class="item active">
+                <div class="notice-img">
+                    <img id="imagem">
+                </div>
+                <div class="content">
+                    <p class="notice-tag" id="tag"></p>
+                    <h1 class="notice-name" id="nome"></h1>
+                    <p class="description" id="descricao"></p>
+                    <p class="detailing" id="detalhamento"></p>
+                    <button class="btn" onclick="history.back()">
+                        Voltar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="noticia.js"></script>
+</body>
+
+</html>

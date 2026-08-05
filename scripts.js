@@ -3,28 +3,27 @@ import dados from "./dados.js";
 const list = document.querySelector(".list");
 const dotsContainer = document.querySelector(".dots");
 const numberIndicator = document.querySelector(".numbers");
-
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 let active = 0;
 
-dados.produtos.forEach((produto, index) => {
+dados.noticias.forEach((noticias, index) => {
     const item = document.createElement("div");
     item.className = `item ${index === 0 ? "active" : ""}`;
     item.innerHTML = `
-        <div class="product-img">
-            <img src="${produto.imagem}" alt="${produto.nome}">
+        <div class="notice-img">
+            <img src="${noticias.imagem}" alt="${noticias.nome}">
         </div>
         <div class="content">
-            <p class="product-tag">${produto.tag}</p>
-            <h2 class="product-name">
-                ${produto.nome}
+            <p class="notice-tag">${noticias.tag}</p>
+            <h2 class="notice-name">
+                ${noticias.nome}
             </h2>
             <p class="description">
-                ${produto.descricao}
+                ${noticias.descricao}
             </p>
-            <button class="btn" data-link="${produto.link}">
+            <button class="btn" data-id="${noticias.id}">
                 Saiba mais
             </button>
         </div>
@@ -34,7 +33,6 @@ dados.produtos.forEach((produto, index) => {
     dot.className = `dot ${index === 0 ? "active" : ""}`;
     dotsContainer.appendChild(dot);
 });
-
 
 const items = document.querySelectorAll(".item");
 const dots = document.querySelectorAll(".dot");
@@ -49,9 +47,14 @@ nextButton.addEventListener("click", () => {
     updateCarousel(1);
 });
 
+document.addEventListener("click", (e) => {
+    if (e.target.matches(".btn")) {
+        const id = e.target.dataset.id;
+        window.location.href = `noticia.html?id=${id}`;
+    }
+});
 
 function updateCarousel(direction) {
-
     items[active].classList.remove("active");
     dots[active].classList.remove("active");
     active += direction;
@@ -65,20 +68,10 @@ function updateCarousel(direction) {
     items[active].classList.add("active");
     dots[active].classList.add("active");
 
-    numberIndicator.textContent =
-        String(active + 1).padStart(2, "0");
-
+    numberIndicator.textContent = String(active + 1).padStart(2, "0");
 }
 
 // Auto Play
 setInterval(() => {
     updateCarousel(1);
 }, 5000);
-
-// Botão Saiba Mais
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn")) {
-        const link = e.target.dataset.link;
-        window.location.href = link;
-    }
-});
