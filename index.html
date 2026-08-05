@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Câmara Madre de Deus</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Câmara Madre de Deus</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="tech-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <!-- Os produtos serão carregados pelo scripts.js -->
+        <div class="list"></div>
+        <div class="arrows">
+            <button class="arrow-btn" id="prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-caret-left-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="m3.86 8.753 5.482 4.796 c.646.566 1.658.106 1.658-.753 V3.204 a1 1 0 0 0-1.659-.753 l-5.48 4.796 a1 1 0 0 0 0 1.506z" />
+                </svg>
+            </button>
+            <button class="arrow-btn" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m12.14 8.753 -5.482 4.796 c-.646.566 -1.658.106 -1.658-.753 V3.204 a1 1 0 0 1 1.659-.753 l5.48 4.796 a1 1 0 0 0 1.506z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="indicators">
+            <div class="numbers">01</div>
+            <!-- Os dots também serão criados automaticamente -->
+            <div class="dots"></div>
+        </div>
+    </main>
+
+    <script type="module" src="./scripts.js"></script>
+
+</body>
+
+</html>
