@@ -77,7 +77,7 @@ header nav ul li:hover::after {
     left: 50%;
     transform: translate(-50%, -50%);
     filter: blur(50px);
-    z-index: -1;
+    z-index: 0;
 }
 
 @keyframes pulse {
@@ -106,7 +106,6 @@ header nav ul li:hover::after {
     justify-content: center;
     align-items: center;
     opacity: 0;
-
     /*ANIMAÇÃO*/
     transform: translateX(100vw);
     transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
@@ -132,7 +131,6 @@ header nav ul li:hover::after {
     max-width: 80%;
     max-height: 80%;
     filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
-
     /*ANIMAÇÃO*/
     transform: translateX(200px);
     opacity: 0;
@@ -231,6 +229,7 @@ header nav ul li:hover::after {
     font-weight: 600;
     cursor: pointer;
     border: none;
+    z-index: 999;
 }
 
 .arrows {
