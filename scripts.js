@@ -26,7 +26,7 @@ async function carregarNoticias() {
         const dados = await response.json();
 
         // Filtra apenas as notícias com tipo "N"
-        const noticiasN = dados.noticias.filter((noticia) => noticia.tipo === "N")
+        const noticiasN = dados.noticias.filter((noticia) => noticia.tipo === "N" && noticia.publicar);
 
         criarNoticias(noticiasN);
 
