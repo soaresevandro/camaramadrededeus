@@ -25,9 +25,10 @@ async function carregarNoticias() {
 
         const dados = await response.json();
 
-        console.log("Notícias recebidas:", dados);
+        // Filtra apenas as notícias com tipo "N"
+        const noticiasN = dados.noticias.filter((noticia) => noticia.tipo === "N")
 
-        criarNoticias(dados.noticias);
+        criarNoticias(noticiasN);
 
     } catch (error) {
         console.error("Erro ao carregar notícias:", error);
