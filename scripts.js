@@ -12,6 +12,21 @@ let items = [];
 let dots = [];
 
 // =====================================================
+// ESCAPE DE HTML (evita XSS em dados vindos da API)
+// =====================================================
+
+function escapeHtml(value) {
+    if (value === null || value === undefined) return "";
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+// =====================================================
 // CARREGAR NOTÍCIAS DA API
 // =====================================================
 
@@ -79,9 +94,9 @@ function criarNoticias(noticias) {
 
         item.innerHTML = `
             <div class="notice-img">
-                <img 
-                    src="${imagemUrl}" 
-                    alt="${noticia.titulo || "Notícia"}"
+                <img
+                    src="${escapeHtml(imagemUrl)}"
+                    alt="${escapeHtml(noticia.titulo || "Notícia")}"
                     onerror="this.src='img/sem-imagem.png'"
                 >
             </div>
@@ -89,20 +104,20 @@ function criarNoticias(noticias) {
             <div class="content">
 
                 <p class="notice-tag">
-                    ${noticia.titulo || ""}
+                    ${escapeHtml(noticia.titulo)}
                 </p>
 
                 <h2 class="notice-name">
-                    ${noticia.resumo || ""}
+                    ${escapeHtml(noticia.resumo)}
                 </h2>
 
                 <p class="description">
-                    ${noticia.conteudo || ""}
+                    ${escapeHtml(noticia.conteudo)}
                 </p>
 
-                <button 
-                    class="btn" 
-                    data-id="${noticia.id}"
+                <button
+                    class="btn"
+                    data-id="${escapeHtml(noticia.id)}"
                 >
                     Saiba mais
                 </button>
